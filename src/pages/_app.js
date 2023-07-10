@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <div className={`${inter.className} container mx-auto px-10`}>
+    <div className={`${inter.className} container mx-auto px-5 md:px-10`}>
       <Head>
         <title>Blog - Naseem Khan</title>
         <link rel="stylesheet" href="/favicon.ico" />

@@ -9,15 +9,27 @@ const PostDetails = ({ post }) => {
 
     if (obj) {
       if (obj.bold) {
-        modifiedText = <b key={index}>{text}</b>;
+        modifiedText = (
+          <b key={index} className="text-sm md:text-base">
+            {text}
+          </b>
+        );
       }
 
       if (obj.italic) {
-        modifiedText = <em key={index}>{text}</em>;
+        modifiedText = (
+          <em key={index} className="text-sm md:text-base">
+            {text}
+          </em>
+        );
       }
 
       if (obj.underline) {
-        modifiedText = <u key={index}>{text}</u>;
+        modifiedText = (
+          <u key={index} className="text-sm md:text-base">
+            {text}
+          </u>
+        );
       }
     }
 
@@ -32,7 +44,7 @@ const PostDetails = ({ post }) => {
         );
       case "paragraph":
         return (
-          <p key={index} className="mb-8">
+          <p key={index} className="mb-8 md:text-base text-sm">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -98,9 +110,7 @@ const PostDetails = ({ post }) => {
           </div>
         </div>
 
-        <h1 className="text-lg sm:text-xl md:text-2xl font-bold">
-          {post.title}
-        </h1>
+        <h1 className="text-xl md:text-2xl font-bold">{post.title}</h1>
 
         <div className="flex flex-col gap-5">
           {post.content.raw.children.map((typeObj, index) => {

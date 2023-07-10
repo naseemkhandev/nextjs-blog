@@ -25,7 +25,7 @@ const Navbar = ({ categories }) => {
         <ul
           className={`${isOpen === false ? "h-0" : "h-[89%]"} ${
             theme === "light" ? "bg-white" : "bg-[#121212]"
-          } transition-all duration-700 flex gap-5 capitalize md:relative absolute top-[4.1rem] md:top-0 left-0 w-full md:w-fit md:bg-transparent md:h-auto flex-col md:flex-row px-10 sm:px-16 md:p-0 overflow-hidden z-50`}
+          } transition-all duration-700 flex gap-5 capitalize md:relative absolute top-[4.1rem] md:top-0 left-0 w-full md:w-fit md:bg-transparent md:h-auto flex-col md:flex-row px-5 md:px-10 sm:px-16 md:p-0 overflow-hidden z-50`}
         >
           {categories.map((category) => (
             <li

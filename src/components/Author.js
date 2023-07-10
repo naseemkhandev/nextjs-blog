@@ -24,7 +24,9 @@ const Author = ({ author }) => {
         </div>
 
         <div className="flex flex-col gap-1 md:gap-0 lg:gap-3 mx-auto">
-          <h2 className="text-xl sm:text-3xl md:text-xl lg:text-3xl font-bold font-serif">{author.name}</h2>
+          <h2 className="text-xl sm:text-3xl md:text-xl lg:text-3xl font-bold font-serif">
+            {author.name}
+          </h2>
           <p className="text-sm md:text-base capitalize">{author.bio}</p>
         </div>
       </div>

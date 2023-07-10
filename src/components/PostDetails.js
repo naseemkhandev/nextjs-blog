@@ -97,7 +97,7 @@ const PostDetails = ({ post }) => {
               className="cursor-pointer object-cover object-top rounded-full"
             />
           </div>
-          <div className="">
+          <div id="author">
             <p className="cursor-pointer text-lg font-semibold">
               {post.author.name}
             </p>

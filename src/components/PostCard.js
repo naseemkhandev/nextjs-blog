@@ -28,13 +28,15 @@ const PostCard = ({ post }) => {
         </div>
 
         <div className="flex items-center gap-2">
-          <Image
-            src={post.author.photo.url}
-            width={40}
-            height={40}
-            alt={post.title}
-            className="cursor-pointer object-cover object-top rounded-full"
-          />
+          <div>
+            <Image
+              src={post.author.photo.url}
+              width={40}
+              height={40}
+              alt={post.author.name}
+              className="cursor-pointer object-cover object-top rounded-full"
+            />
+          </div>
           <div>
             <p className="cursor-pointer text-sm font-[500]">
               {post.author.name}

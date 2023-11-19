@@ -12,6 +12,8 @@ const CommentsForm = ({ slug }) => {
   const emailEl = useRef();
   const storeDataEl = useRef();
 
+  const handleSubmitComment = () => {};
+
   return (
     <div
       className={`${
@@ -22,22 +24,26 @@ const CommentsForm = ({ slug }) => {
     >
       <form className="flex flex-col gap-1">
         <h2 className="text-2xl font-semibold mb-4">Leave a Comment</h2>
-        <div className="w-full">
+        <div
+          className={`${
+            theme === "light"
+              ? "bg-[#dedede] text-[#1d1e20]"
+              : "bg-[#232528] text-[#f7f7f7]"
+          } w-full rounded-lg`}
+        >
           <textarea
-            name=""
+            ref={commentEl}
+            name="comment"
             placeholder="Comment"
             rows={3}
-            className={`${
-              theme === "light"
-                ? "bg-[#dedede] text-[#1d1e20]"
-                : "bg-[#232528] text-[#f7f7f7]"
-            } resize-y w-full border-0 outline-none rounded-lg py-3 px-4`}
+            className={`bg-transparent resize-y w-full border-0 outline-none rounded-lg py-3 px-4`}
           ></textarea>
         </div>
         <div className="grid md:grid-cols-2 gap-2">
           <input
+            ref={nameEl}
             type="text"
-            name="comment"
+            name="name"
             placeholder="Your name"
             className={`${
               theme === "light"
@@ -46,8 +52,9 @@ const CommentsForm = ({ slug }) => {
             } resize-y w-full border-0 outline-none rounded-lg p-4`}
           />
           <input
-            type="text"
-            name="comment"
+            ref={emailEl}
+            type="email"
+            name="email"
             placeholder="Your email"
             className={`${
               theme === "light"
@@ -57,8 +64,20 @@ const CommentsForm = ({ slug }) => {
           />
         </div>
 
+        <div className="my-2 text-sm flex items-center gap-1">
+          <input
+            ref={storeDataEl}
+            type="checkbox"
+            id="storeData"
+            className="cursor-pointer"
+          />
+          <label htmlFor="storeData" className="cursor-pointer select-none">
+            Save my name and email for the next time I comment
+          </label>
+        </div>
+
         <div className="mt-5">
-          <button type="submit">
+          <button type="submit" onClick={handleSubmitComment}>
             <span
               className={`${
                 theme === "light"
